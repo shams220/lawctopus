@@ -6,7 +6,7 @@ function TableOfContents({ title = "What's Inside", sections = [] }) {
     () => sections.filter((section) => section?.id && section?.label),
     [sections],
   )
-  const [activeId, setActiveId] = useState('')
+  const [activeId, setActiveId] = useState(validSections[0]?.id || '')
   const [isOpen, setIsOpen] = useState(false)
   const navRef = useRef(null)
   const linkRefs = useRef(new Map())
